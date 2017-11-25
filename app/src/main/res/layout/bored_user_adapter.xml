@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:textSize="@dimen/textList"
+        android:layout_marginBottom="@dimen/marginList"
+        android:layout_marginTop="@dimen/marginList"
+        android:text="Olim Toby" />
+
+    <TextView
+        android:id="@+id/descriptionView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/marginList"
+        android:layout_marginTop="@dimen/marginList"
+        android:layout_weight="0.25"
+        android:text="Description"
+        android:textSize="@dimen/textList" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/textList"
+        android:layout_marginTop="@dimen/marginList"
+        android:layout_weight="0.35"
+        android:src="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_gravity="center"
+        android:layout_weight="0.35"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/textList"
+        android:layout_marginTop="@dimen/marginList"
+        android:src="@mipmap/ic_launcher"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_gravity="center"
+        android:layout_weight="0.35"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/textList"
+        android:layout_marginTop="@dimen/marginList"
+        android:src="@mipmap/ic_launcher"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_gravity="center"
+        android:layout_weight="0.35"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/textList"
+        android:layout_marginTop="@dimen/marginList"
+        android:src="@mipmap/ic_launcher"/>
+
+
+</LinearLayout>

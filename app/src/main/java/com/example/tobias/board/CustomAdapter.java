@@ -2,6 +2,7 @@ package com.example.tobias.board;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,6 +11,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Date;
+
 public class CustomAdapter extends BaseAdapter{
     String [] result;
     Context context;
@@ -47,6 +51,7 @@ public class CustomAdapter extends BaseAdapter{
     {
         TextView name;
         TextView description;
+        TextView time;
         ImageView img;
     }
     @Override
@@ -54,21 +59,36 @@ public class CustomAdapter extends BaseAdapter{
         // TODO Auto-generated method stub
         Holder holder=new Holder();
         View rowView;
-        rowView = inflater.inflate(R.layout.bored_user_adapter, null);
-        holder.name=(TextView) rowView.findViewById(R.id.nameView);
-        holder.description=(TextView) rowView.findViewById(R.id.descriptionView);
+        //rowView = inflater.inflate(R.layout.bored_user_adapter, null);
+//        holder.name=(TextView) rowView.findViewById(R.id.nameView);
+//        holder.description=(TextView) rowView.findViewById(R.id.descriptionView);
 //        holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
 //        holder.img.setImageResource(imageId[position]);
+
+
+        rowView = inflater.inflate(R.layout.board_message, null);
+        holder.name=(TextView) rowView.findViewById(R.id.message_user);
+        holder.description=(TextView) rowView.findViewById(R.id.message_text);
+        holder.time=(TextView) rowView.findViewById(R.id.message_time);
+
+        ImageView ic_cam = (ImageView) rowView.findViewById(R.id.ic_cam);
+
+        ic_cam.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "You Clicked Cam of " +result[position], Toast.LENGTH_SHORT).show();
+            }
+        });
+
         holder.name.setText(result[position]);
-        holder.description.setText(descrId[position]);
+        holder.description.setText(descrId[position]+" is Bored");
+        holder.time.setText(DateFormat.format("HH:mm:ss",new Date()));
         rowView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
 //                Intent i = new Intent(context,PlayerAccountActivity.class);
-//                i.putExtra("playername", result[position]);
-//                i.putExtra("listName", "players");
 //                context.startActivity(i);
             }
         });
